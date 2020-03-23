@@ -119,22 +119,23 @@ async def pipcheck(pip):
         await pip.edit("`Use .help pip to see an example`")
 
 
-@register(outgoing=True, pattern="^.alive$")
+@register(outgoing=True, pattern="^.start$")
 async def amireallyalive(alive):
-    """ For .alive command, check if the bot is running.  """
-    await alive.edit(
-                     "`i am alive My Mastor` \n"
-                     "`i can't die` \n"
+    """ For .start command, check if the bot is running.  """
+    await on.edit("`"
+                     "I am alive, My Boss. \n\n"
+                     " \n"
+                     "E.D.I.T.H. is online. \n\n"
                      f"Telethon version: {version.__version__} \n"
                      f"Python: {python_version()} \n"
-                     f"------------------------------------ \n"
-                     f"Website: https://www.facebook.com/Teknoways \n"
-                     f"User: {DEFAULTUSER} \n"
-                     f"Maintainer: @Mayur_Karaniya \n"
-                     f"Admin: @Three_Cube_TeKnoways \n"
-                     f"Userbot: @testing_userbot "
-                     )    
-
+                     f"---------------------------------- \n"
+                     " \n"
+                     f"Creator: S A Sohan \n"
+                     f"Owner: S A Sohan \n"
+                     " \n"
+                     f"Sohan'z Bot: E.D.I.T.H. \n"
+                     f"Even Dead, I'm The Hero! 😎 "
+                     "`")   
 
 
 @register(outgoing=True, pattern="^.aliveu")
@@ -167,9 +168,9 @@ CMD_HELP.update(
     {"pip": ".pip <module(s)>\
     \nUsage: Does a search of pip modules(s)."})
 CMD_HELP.update({
-    "alive":
-    ".alive\
-    \nUsage: Type .alive to see wether your bot is working or not.\
+    "start":
+    ".start\
+    \nUsage: Type .start to see wether your bot is working or not.\
     \n\n.aliveu <text>\
     \nUsage: Changes the 'user' in alive to the text you want.\
     \n\n.resetalive\
