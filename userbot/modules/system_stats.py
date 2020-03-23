@@ -122,7 +122,7 @@ async def pipcheck(pip):
 @register(outgoing=True, pattern="^.start$")
 async def amireallyalive(alive):
     """ For .start command, check if the bot is running.  """
-    await on.edit("`"
+    await alive.edit("`"
                      "I am alive, My Boss. \n\n"
                      " \n"
                      "E.D.I.T.H. is online. \n\n"
