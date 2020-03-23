@@ -36,7 +36,7 @@ if LYDIA_API_KEY:
     api_client = API(api_key)
     lydia = LydiaAI(api_client)
 
-@register(outgoing=True, pattern="^.repcf$")
+@register(outgoing=True, pattern="^.rlda$")
 async def repcf(event):
     if event.fwd_from:
         return
@@ -51,7 +51,7 @@ async def repcf(event):
     except Exception as e:
         await event.edit(str(e))
 
-@register(outgoing=True, pattern="^.addcf$")
+@register(outgoing=True, pattern="^.elda$")
 async def addcf(event):
     if event.fwd_from:
         return
@@ -65,11 +65,11 @@ async def addcf(event):
         if reply_msg.from_id is None:
             return await event.edit("Invalid user type.")
         ACC_LYDIA.update({(event.chat_id & reply_msg.from_id): session})
-        await event.edit("Lydia successfully (re)enabled for user: {} in chat: {}".format(str(reply_msg.from_id), str(event.chat_id)))
+        await event.edit("EDITH successfully (re)enabled for user: {} in chat: {}".format(str(reply_msg.from_id), str(event.chat_id)))
     else:
         await event.edit("Reply to a user to activate Lydia AI on them")
 
-@register(outgoing=True, pattern="^.remcf$")
+@register(outgoing=True, pattern="^.dlda$")
 async def remcf(event):
     if event.fwd_from:
         return
@@ -79,7 +79,7 @@ async def remcf(event):
     reply_msg = await event.get_reply_message()
     try:
         del ACC_LYDIA[event.chat_id & reply_msg.from_id]
-        await event.edit("Lydia successfully disabled for user: {} in chat: {}".format(str(reply_msg.from_id), str(event.chat_id)))
+        await event.edit("EDITH successfully disabled for user: {} in chat: {}".format(str(reply_msg.from_id), str(event.chat_id)))
     except Exception:
         await event.edit("This person does not have Lydia activated on him/her.")
 
@@ -103,10 +103,10 @@ async def user(event):
       
 CMD_HELP.update({
     "lydia":
-    ".addcf <username/reply>\
+    ".elda <username/reply>\
 \nUsage: add's lydia auto chat request in the chat.\
-\n\n.remcf <username/reply>\
+\n\n.dlda <username/reply>\
 \nUsage: remove's lydia auto chat request in the chat.\
-\n\n.repcf <username/reply>\
+\n\n.rlda <username/reply>\
 \nUsage: starts lydia repling to perticular person in the chat."
 })
