@@ -707,7 +707,7 @@ async def slap(replied_user, event):
 async def lol(lel):
     """ Ok... """
     okay = "-_-"
-    for i in range(60):
+    for i in range(75):
         okay = okay[:-1] + "_-"
         await lel.edit(okay)
 
